@@ -1,7 +1,7 @@
 import requests
 from time import sleep
 
-url_base = 'http://127.0.0.1:5000'
+url_base = 'http://os-sample-python-git'
 para = '/api/v1/resources/books/all'
 url = url_base + para
 
@@ -13,8 +13,9 @@ while True:
         print(response.status_code)
         content = response.json()
         print(content)
-    except:
+    except Exception as E:
         print('something wrong')
+        print(E)
     n += 1
     sleep(5)
     if n > 1000:
